@@ -1,2 +1,4 @@
-outputs/model.pth
-# input
+# requirements.txt
+.venv
+requirements.txt
+# outputs

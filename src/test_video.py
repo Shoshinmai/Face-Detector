@@ -7,7 +7,7 @@ import config
 from model import FaceKeypointResNet50
 
 model = FaceKeypointResNet50(pretrained=False, requires_grad=False).to(config.DEVICE)
-checkpoint = torch.load(r'D:\AI dev\ML\project\Facial Detection\facial detection RGB\outputs\model.pth')
+checkpoint = torch.load(r'D:\AI dev\ML\project\Face-Detector\outputs\model.pth',weights_only= False) #path to the model
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 
@@ -18,7 +18,7 @@ if (cap.isOpened() == False):
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 
-save_path = r'D:\AI dev\ML\project\Facial Detection\facial detection RGB\outputs\vid_key.mp4'
+save_path = r'D:\AI dev\ML\project\Face-Detector\outputs\vid_key.mp4' #path to save the video
 
 out = cv2.VideoWriter(f"{save_path}",
                       cv2.VideoWriter_fourcc(*'mp4v'),20,
